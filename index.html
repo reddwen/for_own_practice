@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="a.js"></script>
+</head>
+<body>
+  <div class="bg">
+    <div class="money">-5.00</div>
+    <div class="time">2024年5月31日 22:13:44</div>
+    <div class="bank">招商银行储蓄卡(5677)</div>
+    <div class="code"></div>
+    <div class="paycode"></div>
+  </div>
+  <script>
+    let money = location.search.split("=")[1]
+    let year = new Date().getFullYear()
+    let mon = new Date().getMonth() + 1
+    let date = new Date().getDate() +1
+    let h = new Date().getHours()
+    let m = new Date().getMinutes() 
+    let s = new Date().getSeconds() > 9 ? new Date().getSeconds(): '0'+new Date().getSeconds()
+    let str = Math.random()*100000000000000000
+    let str1 = Math.floor(Math.random()*10000000000000)
+    let rand_1 = Math.floor(Math.random()*4);
+    let bank = ['工商银行','建设银行','招商银行','农业银行','中国银行','交通银行']
+    let card = ['储蓄卡','信用卡']
+    let card_no = Math.floor(Math.random()*10000)
+    console.log("hex_rand",rand_1)
+    let bank_txt =  bank[rand_1] + card[rand_1%2] +'('+card_no +')'
+    document.getElementsByClassName("time")[0].innerHTML = year+"年"+mon+"月"+date+"日 "+h+":"+m+":"+s
+    document.getElementsByClassName("code")[0].innerHTML = str+""+ str1
+    document.getElementsByClassName("bank")[0].innerHTML = bank_txt
+    document.getElementsByClassName("money")[0].innerHTML = money
+    document.getElementsByClassName("paycode")[0].innerHTML = str.toString(16).toUpperCase()+str1.toString(16).toUpperCase()
+  </script>
+</body>
+</html>
