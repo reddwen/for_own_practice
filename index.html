@@ -22,7 +22,7 @@
     let money = location.search.split("=")[1]
     let year = new Date().getFullYear()
     let mon = new Date().getMonth() + 1
-    let date = new Date().getDate() +1
+    let date = new Date().getDate() 
 
     let h = new Date().getHours()
     h = h > 9 ? h : '0' + h;
@@ -40,12 +40,12 @@
     let card_no = Math.floor(Math.random()*10000)
     console.log("hex_rand",rand_1)
     let bank_txt =  bank[rand_1] + card[rand_1%2] +'('+card_no +')'
-  //   document.getElementsByClassName("time")[0].innerHTML = year+"年"+mon+"月"+date+"日 "+h+":"+m+":"+s
-  //   document.getElementsByClassName("code")[0].innerHTML = str+""+ str1
-  //   document.getElementsByClassName("bank")[0].innerHTML = bank_txt
-  //   document.getElementsByClassName("money")[0].innerHTML = money
-  //   document.getElementsByClassName("paycode")[0].innerHTML = str.toString(16).toUpperCase()+str1.toString(16).toUpperCase()
-  // 
+    document.getElementsByClassName("time")[0].innerHTML = year+"年"+mon+"月"+date+"日 "+h+":"+m+":"+s
+    document.getElementsByClassName("code")[0].innerHTML = str+""+ str1
+    document.getElementsByClassName("bank")[0].innerHTML = bank_txt
+    document.getElementsByClassName("money")[0].innerHTML = money
+    document.getElementsByClassName("paycode")[0].innerHTML = str.toString(16).toUpperCase()+str1.toString(16).toUpperCase()
+  
   </script>
 </body>
 </html>
